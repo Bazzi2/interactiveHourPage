@@ -30,9 +30,9 @@
 </head>
 <body id="body" onload="dayTime()">
     <h1>Hour in Day</h1>
-    <div id="container" onload="dayTime()"> 
-        <h4 id="label">Now is ...hs and ... minutes</h4>
-        <img id="image" src="morning.jpg" alt="Morning Photo">
+    <div id="container"> 
+        <h4 id="label"></h4>
+        <img id="image" src="" alt="">
     </div>
     <p>&copy; Bazzi2</p>
 
@@ -57,6 +57,7 @@
             if(hours > 0 && hours < 6 ) {
                 label.innerHTML = `Now is ${hours}hs and ${minutes}minutes `;
                 image.src = 'dawn.jpg';
+                image.alt = 'Dawn photo';
                 message.innerHTML = `Is dawm men, go sleep...`
                 backPage.style.backgroundColor = 'rgba(0, 67, 83, 1)';
                 container.style.backgroundColor = '#504e4e';
@@ -64,6 +65,7 @@
             }else if(hours >= 6 && hours < 12 ) {
                 label.innerHTML = `Now is ${hours}hs and ${minutes}minutes `;
                 image.src = 'morning.jpg';
+                image.alt = 'Morning photo';
                 message.innerHTML = `Good Morning`
                 backPage.style.backgroundColor = 'rgba(220, 198, 172, 1)';
                 container.style.backgroundColor = 'rgba(158, 167, 169, 1)';
@@ -72,6 +74,7 @@
             }else if (hours >= 12 && hours < 18) {
                 label.innerHTML = `Now is ${hours}hs and ${minutes}minutes `; 
                 image.src = 'afternoon.jpg';
+                image.alt = 'Afternoon photo';
                 message.innerHTML = `Good Afternoon`
                 backPage.style.backgroundColor = 'rgba(157, 177, 186, 1)';
                 container.style.backgroundColor = 'rgba(129, 138, 126, 1)';
@@ -79,6 +82,7 @@
             }else if (hours >= 18 && hours <= 20){
                 label.innerHTML = `Now is ${hours}hs and ${minutes}minutes `; 
                 image.src = 'evening.jpg';
+                image.alt = 'Evening photo';
                 message.innerHTML = `Good Evening`
                 backPage.style.backgroundColor = 'rgba(240, 174, 131, 1)';
                 container.style.backgroundColor = 'rgba(156, 117, 91, 1)';
@@ -87,6 +91,7 @@
             }else if (hours >=0 ) {
                 label.innerHTML = `Now is ${hours}hs and ${minutes}minutes `; 
                 image.src = 'night.jpg';
+                image.alt = 'Night photo';
                 message.innerHTML = `Good Night`
                 backPage.style.backgroundColor = 'rgba(21, 36, 65, 1)';
                 container.style.backgroundColor = 'rgba(14, 24, 47, 1)';
