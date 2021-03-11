@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: auto;
+            align-items: center;
+            text-align: center;
+            background: rgb(209, 133, 62);
+            font: normal 18pt Arial;
+        }
+        div#container {
+            background-color:#ddd;
+            border-radius: 10px;
+            width: 80%;
+        }
+        #image {
+            border-radius: 150px;
+            width: 200px;
+            height: 200px;
+            
+        }
+    </style>
+</head>
+<body id="body" onload="dayTime()">
+    <h1>Hour in Day</h1>
+    <div id="container" onload="dayTime()"> 
+        <h4 id="label">Now is ...hs and ... minutes</h4>
+        <img id="image" src="morning.jpg" alt="Morning Photo">
+    </div>
+    <p>&copy; Bazzi2</p>
+
+    <script>
+
+        
+        function dayTime () {
+            var label = document.getElementById("label");
+            var image = document.getElementById("image");
+            var backPage = document.getElementById('body');
+            var container = document.getElementById("container");
+            var message = document.createElement('h3');
+            
+            container.appendChild(message);
+            
+            var hours = new Date().getHours();
+            var minutes = new Date().getMinutes();
+
+
+            document.createElement("h4")
+            
+            if(hours > 0 && hours < 6 ) {
+                label.innerHTML = `Now is ${hours}hs and ${minutes}minutes `;
+                image.src = 'dawn.jpg';
+                message.innerHTML = `Is dawm men, go sleep...`
+                backPage.style.backgroundColor = 'rgba(0, 67, 83, 1)';
+                container.style.backgroundColor = '#504e4e';
+                
+            }else if(hours >= 6 && hours < 12 ) {
+                label.innerHTML = `Now is ${hours}hs and ${minutes}minutes `;
+                image.src = 'morning.jpg';
+                message.innerHTML = `Good Morning`
+                backPage.style.backgroundColor = 'rgba(220, 198, 172, 1)';
+                container.style.backgroundColor = 'rgba(158, 167, 169, 1)';
+                
+                
+            }else if (hours >= 12 && hours < 18) {
+                label.innerHTML = `Now is ${hours}hs and ${minutes}minutes `; 
+                image.src = 'afternoon.jpg';
+                message.innerHTML = `Good Afternoon`
+                backPage.style.backgroundColor = 'rgba(157, 177, 186, 1)';
+                container.style.backgroundColor = 'rgba(129, 138, 126, 1)';
+                
+            }else if (hours >= 18 && hours <= 20){
+                label.innerHTML = `Now is ${hours}hs and ${minutes}minutes `; 
+                image.src = 'evening.jpg';
+                message.innerHTML = `Good Evening`
+                backPage.style.backgroundColor = 'rgba(240, 174, 131, 1)';
+                container.style.backgroundColor = 'rgba(156, 117, 91, 1)';
+                backPage.style.color = '#aaa'
+                
+            }else if (hours >=0 ) {
+                label.innerHTML = `Now is ${hours}hs and ${minutes}minutes `; 
+                image.src = 'night.jpg';
+                message.innerHTML = `Good Night`
+                backPage.style.backgroundColor = 'rgba(21, 36, 65, 1)';
+                container.style.backgroundColor = 'rgba(14, 24, 47, 1)';
+                backPage.style.color = 'white'
+                
+            }
+
+        }
+    </script>
+</body>
+</html>
